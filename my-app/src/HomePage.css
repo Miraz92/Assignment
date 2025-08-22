@@ -8,6 +8,72 @@
   padding: 20px;
 }
 
+.sidebar h2 {
+  margin-bottom: 3em;
+}
+
+.sidebar-features li {
+  margin-bottom: 1em;
+  list-style-type: none;
+}
+
+.sidebar-features a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .main-content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.selection-boxes {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.selection-box {
+  position: relative;
+  width: 200px;
+  margin: 0 10px;
+}
+
+.box-label {
+  position: absolute;
+  top: -1.2em;
+  left: 10px;
+  background-color: white;
+  padding: 0 5px;
+  font-size: 0.8em;
+}
+
+.box-header {
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-list {
+  border: 1px solid #ccc;
+  border-top: none;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dropdown-list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.calendar-container {
+  margin-top: 20px;
 }
