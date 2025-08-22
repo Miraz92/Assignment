@@ -10,9 +10,11 @@ const HomePage = () => {
   const [selectedDoctor, setSelectedDoctor] = useState(null);
   const [showServiceDropdown, setShowServiceDropdown] = useState(false);
   const [showDoctorDropdown, setShowDoctorDropdown] = useState(false);
+  const [selectedTime, setSelectedTime] = useState(null);
 
   const services = ['Teeth Whitening', 'Check-up', 'Cleaning', 'Braces'];
   const doctors = ['Dr. Smith', 'Dr. Jones', 'Dr. Williams', 'Dr. Brown'];
+  const times = ['9:00 AM', '9:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '1:00 PM', '1:30 PM', '2:00 PM', '2:30 PM', '3:00 PM', '3:30 PM', '4:00 PM', '4:30 PM', '5:00 PM'];
 
   const onChange = date => {
     setDate(date);
@@ -34,7 +36,7 @@ const HomePage = () => {
         <h1>Book an Appointment</h1>
         <div className="selection-boxes">
           <div className="selection-box">
-            {selectedService && <div className="box-label">Service</div>}
+            <div className="box-label">Service</div>
             <div className="box-header" onClick={() => setShowServiceDropdown(!showServiceDropdown)}>
               <span>{selectedService || 'Select Service'}</span>
               <span>▼</span>
@@ -50,7 +52,7 @@ const HomePage = () => {
             )}
           </div>
           <div className="selection-box">
-            {selectedDoctor && <div className="box-label">Doctors</div>}
+            <div className="box-label">Doctor</div>
             <div className="box-header" onClick={() => setShowDoctorDropdown(!showDoctorDropdown)}>
               <span>{selectedDoctor || 'Select Doctor'}</span>
               <span>▼</span>
@@ -68,6 +70,25 @@ const HomePage = () => {
         </div>
         <div className="calendar-container">
           <Calendar onChange={onChange} value={date} />
+        </div>
+        <div className="time-grid-container">
+          <p>Available Time on {date.toDateString()}</p>
+          <div className="time-grid">
+            {times.map(time => (
+              <div 
+                key={time} 
+                className={`time-slot ${selectedTime === time ? 'selected' : ''}`} 
+                onClick={() => setSelectedTime(selectedTime === time ? null : time)}
+              >
+                {time}
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="confirm-booking-wrapper">
+          <div className={`confirm-booking-box ${selectedService && selectedDoctor && selectedTime ? 'active' : ''}`}>
+            Confirm Booking
+          </div>
         </div>
       </div>
     </div>
