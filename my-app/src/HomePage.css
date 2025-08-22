@@ -136,3 +136,114 @@
   justify-content: flex-end; /* Align content to the right */
   margin-top: 20px; /* Add some space from the element above */
 }
+
+.selected-sidebar-item {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+.doctors-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.doctor-list {
+  display: flex; /* Change from grid to flex */
+  flex-direction: column; /* Stack items vertically */
+  gap: 10px; /* Reduce gap for list items */
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px; /* Adjust max-width for a list */
+}
+
+.doctor-card {
+  display: flex; /* Use flex for content inside each list item */
+  align-items: center; /* Align items vertically in the middle */
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+.doctor-card:hover {
+  background-color: #f0f0f0;
+}
+
+.doctor-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.doctor-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-card h3 {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+.doctor-card p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.pagination button.active {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.selected-doctor-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #e6f2ff;
+}
+
+.selected-doctor-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.selected-doctor-details h3 {
+  margin: 0;
+  font-size: 1.1em;
+  color: #007bff;
+}
+
+.selected-doctor-details p {
+  margin: 0;
+  font-size: 0.9em;
+  color: #333;
+}
