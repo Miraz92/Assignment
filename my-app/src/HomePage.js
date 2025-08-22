@@ -80,15 +80,8 @@ const HomePage = () => {
               </div>
               <div className="selection-box">
                 <div className="box-label">Doctor</div>
-                {selectedDoctor && (
-                  <div className="selected-doctor-details">
-                    <img src={selectedDoctor.pic} alt={selectedDoctor.name} className="selected-doctor-pic" />
-                    <h3>{selectedDoctor.name}</h3>
-                    <p>{selectedDoctor.email}</p>
-                  </div>
-                )}
                 <div className="box-header" onClick={() => setShowDoctorDropdown(!showDoctorDropdown)}>
-                  <span>{selectedDoctor ? selectedDoctor.name : 'Select Doctor'}</span>
+                  <span>{selectedDoctor || 'Select Doctor'}</span>
                   <span>▼</span>
                 </div>
                 {showDoctorDropdown && (
@@ -132,7 +125,7 @@ const HomePage = () => {
             <h1>Our Doctors</h1>
             <div className="doctor-list">
               {currentDoctors.map(doctor => (
-                <div key={doctor.id} className="doctor-card" onClick={() => { setSelectedDoctor(doctor); setActivePage('Services'); }}>
+                <div key={doctor.id} className="doctor-card">
                   <img src={doctor.pic} alt={doctor.name} className="doctor-pic" />
                   <div className="doctor-info">
                     <h3>{doctor.name}</h3>
